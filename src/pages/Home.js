@@ -1,17 +1,21 @@
 import React, { Component } from "react";
+import Todos from "../component/todos";
+import AddTodo from "../component/AddTodo";
+import "../pages/Home.css"; 
 
 class Home extends Component {
   // A default state of this component with an empty list of todos.
   constructor() {
     super();
     this.state = {
-      // create your empty list here call it todos.
+      todos: [], // Initializing the state with an empty list
     };
   }
-  // the addTodo function simply creates a new array that includes the user submitted todo item and then
+
+  // The addTodo function simply creates a new array that includes the user submitted todo item and then
   // updates the state with the new list.
   addTodo = (todo) => {
-    // In React, keys or ids in a list help identify which items have changed, been added or removed. Keys
+    // In React, keys or ids in a list help identify which items have changed, been added, or removed. Keys
     // should not share duplicate values.
     // To avoid having dup values, we use the Math.random() function to generate a random value for a todo id.
     // This solution works for a small application but a more complex hashing function should be used when
@@ -24,11 +28,13 @@ class Home extends Component {
       todos: new_list,
     });
   };
+
   render() {
     return (
       <div className="Home">
-        <p> Replace this</p>
-        <h1>Todo's </h1>
+        <h1>{`Todo's`} </h1>
+        <AddTodo addTodo={this.addTodo} /> {this.addTodo}
+        <Todos todos={this.state.todos} /> {this.setState}
       </div>
     );
   }

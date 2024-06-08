@@ -1,5 +1,12 @@
 .todoCollection {
     max-width: 400px;
-    margin: auto;
+  margin: 10px auto;
+   
     padding-bottom: 20px;
 }
+.todoItem {
+    margin-bottom: 10px; 
+    cursor: pointer;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+  }
